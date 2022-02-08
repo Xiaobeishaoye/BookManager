@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -16,6 +17,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 @ComponentScan("book.manager.controller")
 @Configuration
 @EnableWebMvc
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MvcConfiguration implements WebMvcConfigurer {
 
     //我们需要使用ThymeleafViewResolver作为视图解析器，并解析我们的HTML页面
