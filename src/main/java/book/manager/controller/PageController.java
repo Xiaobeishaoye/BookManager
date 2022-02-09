@@ -23,7 +23,6 @@ public class PageController {
 
     @RequestMapping("/index")
     public String index(){
-        System.out.println(simpleSevice.test());
         return "index";
     }
 
