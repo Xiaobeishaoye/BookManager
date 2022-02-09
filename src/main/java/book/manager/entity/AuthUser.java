@@ -1,10 +1,13 @@
 package book.manager.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class AuthUser {
-    String username;
+    int id;
+    String name;
     String password;
     String role;
 }

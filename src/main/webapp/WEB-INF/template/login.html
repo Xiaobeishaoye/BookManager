@@ -7,7 +7,7 @@
 <!-- Begin Head -->
 
 <head>
-    <title>SplashDash</title>
+    <title>登录-图书管理系统</title>
     <meta charset="gb2312">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="description" content="">
@@ -31,12 +31,9 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="ad-auth-content">
-                        <form action="doLogin" method="post">
-                            <a href="index.html" class="ad-auth-logo">
-                                <img src="static/picture/logo2.png" alt="">
-                            </a>
-                            <h2><span class="primary">Hello,</span>Welcome!</h2>
-                            <p>Please Enter Your Details Below to Continue</p>
+                        <form action="api/auth/login" method="post">
+                            <h2><span class="primary">你好,</span>请登录!</h2>
+                            <p>登录后即可访问图书管理系统</p>
                             <div class="ad-auth-form">
                                 <div class="ad-auth-feilds mb-30">
                                     <input name="username" type="text" placeholder="用户名" class="ad-input">
@@ -58,18 +55,14 @@
 									<span>记住我</span>
 									</label>
                                 </div>
-                                <a class="forgot-pws-btn" href="forgot-pws.html">Forgot Password?</a>
                             </div>
                             <div class="ad-auth-btn">
                                 <button href="javascript:void(0);" class="ad-btn ad-login-member">登录</button>
                             </div>
-                            <p class="ad-register-text">Don't have an account? <a href="register.html">Click Here</a></p>
+                            <p class="ad-register-text">还没有账户? <a href="register">点击注册</a></p>
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="ad-notifications ad-error">
-                <p><span>Duhh!</span>Something Went Wrong</p>
             </div>
         </div>
     </div>

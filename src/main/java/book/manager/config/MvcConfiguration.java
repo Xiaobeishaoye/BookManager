@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
@@ -25,7 +26,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
     public ThymeleafViewResolver thymeleafViewResolver(@Autowired SpringTemplateEngine springTemplateEngine){
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setOrder(1);
-        resolver.setCharacterEncoding("UTF-8");
+        resolver.setCharacterEncoding("gb2312");
         resolver.setTemplateEngine(springTemplateEngine);
         return resolver;
     }
@@ -44,6 +45,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
     public SpringTemplateEngine springTemplateEngine(@Autowired ITemplateResolver resolver){
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setTemplateResolver(resolver);
+        engine.addDialect(new SpringSecurityDialect());   //添加针对于SpringSecurity的方言
         return engine;
     }
 
