@@ -91,7 +91,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             httpServletResponse.sendRedirect("/bookmanager/page/admin/index");
         }
         else{
-            httpServletResponse.sendRedirect("/bookmanager/index");
+            httpServletResponse.sendRedirect("/bookmanager/page/user/index");
         }
     }
 }
