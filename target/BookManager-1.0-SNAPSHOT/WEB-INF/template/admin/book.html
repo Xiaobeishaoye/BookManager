@@ -27,7 +27,7 @@
 <body>
 <div class="loader">
     <div class="spinner">
-        <img src="static/picture/loader.gif" alt="">
+        <img th:src="@{/static/picture/loader.gif}" alt="">
     </div>
 </div>
 <!-- Main Body -->
@@ -47,7 +47,7 @@
                             <ul>
                                 <li>
                                     <div class="add-group">
-                                        <a class="ad-btn">添加新图书</a>
+                                        <a class="ad-btn" th:href="@{/page/admin/add-book}">添加新图书</a>
                                     </div>
                                 </li>
                             </ul>
@@ -83,7 +83,7 @@
                                             <td th:text="${book.getDesc()}">书籍简介</td>
                                             <td th:text="${book.getPrice()}">价格</td>
                                             <td class="relative">
-                                                <a class="action-btn " href="">
+                                                <a class="action-btn " th:href="@{/api/admin/del-book?id=}+${book.getBid()}">
                                                     <svg class="default-size " viewBox="0 0 341.333 341.333 ">
                                                         <g>
                                                             <g>

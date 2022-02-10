@@ -29,4 +29,9 @@ public class AdminPageController {
         model.addAttribute("bookList",bookService.getAllBook());
         return "/admin/book";
     }
+    @RequestMapping("/add-book")
+    public String addBook(HttpSession session, Model model){
+        model.addAttribute("user",service.findUser(session));
+        return "/admin/add-book";
+    }
 }
