@@ -14,13 +14,6 @@ import javax.servlet.ServletException;
 public class MvcInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
-        servletContext.addFilter("characterEncodingFilter",new CharacterEncodingFilter("gb2312",true))
-                .addMappingForUrlPatterns(null,false,"/*");
-        super.onStartup(servletContext);
-    }
-
-    @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[]{RootConfiguration.class, SecurityConfiguration.class};
     }
