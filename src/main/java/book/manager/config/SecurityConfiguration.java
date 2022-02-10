@@ -55,8 +55,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()   //首先需要配置哪些请求会被拦截，哪些请求必须具有什么角色才能访问
-                .antMatchers("/static/**","/login","/register","/api/auth/**").permitAll()    //静态资源，使用permitAll来运行任何人访问（注意一定要放在前面）
-                .anyRequest().hasAnyRole("user","admin")   //除了上面以外的所有内容，只能是admin访问
+                .antMatchers("/static/**", "/login", "/register", "/api/auth/**").permitAll()    //静态资源，使用permitAll来运行任何人访问（注意一定要放在前面）
+                .anyRequest().hasAnyRole("user", "admin")   //除了上面以外的所有内容，只能是admin访问
                 .and()
                 .formLogin()
                 .loginPage("/login")
@@ -70,7 +70,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .rememberMe()   //开启记住我功能
                 .rememberMeParameter("remember")  //登陆请求表单中需要携带的参数，如果携带，那么本次登陆会被记住
-                .tokenValiditySeconds(60*60*24*7)
+                .tokenValiditySeconds(60 * 60 * 24 * 7)
                 .tokenRepository(repository);
         }
 
