@@ -15,9 +15,9 @@
     <meta name="author" content="">
     <meta name="MobileOptimized" content="320">
     <!--Start Style -->
-    <link rel="stylesheet" type="text/css" href="static/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="static/css/auth.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/fonts.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/auth.css}">
 </head>
 
 <body>
@@ -26,12 +26,12 @@
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="ad-auth-img">
-                        <img src="static/picture/auth-img1.png" alt="">
+                        <img th:src="@{/static/picture/auth-img1.png}" alt="">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="ad-auth-content">
-                        <form action="api/auth/login" method="post">
+                        <form th:action="@{/api/auth/login}" method="post">
                             <h2><span class="primary">你好,</span>请登录!</h2>
                             <p>登录后即可访问图书管理系统</p>
                             <div class="ad-auth-form">
