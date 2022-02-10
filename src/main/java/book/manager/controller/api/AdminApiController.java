@@ -20,4 +20,12 @@ public class AdminApiController {
         service.deleteBook(id);
         return "redirect:/page/admin/book";
     }
+
+    @RequestMapping(value = "add-book",method = RequestMethod.POST)
+    public String addBook(@RequestParam("title")String title,
+                          @RequestParam("desc")String desc,
+                          @RequestParam("price")double price){
+        service.addBook(title,desc,price);
+        return "redirect:/page/admin/book";
+    }
 }
