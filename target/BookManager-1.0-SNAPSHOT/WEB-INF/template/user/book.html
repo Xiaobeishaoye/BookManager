@@ -74,7 +74,7 @@
                                             <td th:text="${book.getDesc()}"> ÈºÆºÚΩÈ</td>
                                             <td th:text="${book.getPrice()}">º€∏Ò</td>
                                             <td class="relative">
-                                                <a class="action-btn " th:href="@{/api/user/borrow-book?id=}+${book.getBid()}">
+                                                <a class="action-btn " th:href="@{/api/user/return-book?id=}+${book.getBid()}">
                                                     <svg class="default-size " viewBox="0 0 341.333 341.333 ">
                                                         <g>
                                                             <g>
