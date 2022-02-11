@@ -1,5 +1,6 @@
 package book.manager.controller.page;
 
+import book.manager.entity.AuthUser;
 import book.manager.service.AuthService;
 import book.manager.service.BookService;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,9 @@ public class UserPageController {
     }
     @RequestMapping("/book")
     public String book(HttpSession session, Model model){
-        model.addAttribute("user",service.findUser(session));
+        AuthUser user=service.findUser(session);
+        model.addAttribute("user",user);
+        model.addAttribute("bookList",bookService.getAllBorrowedBookById(user.getId()));
         return "/user/book";
     }
 }

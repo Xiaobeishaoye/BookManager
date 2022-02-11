@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,6 +35,16 @@ public class BookServiceImpl implements BookService {
                 .collect(Collectors.toList());
         return books.stream()
                 .filter(book -> !borrows.contains(book.getBid()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Book> getAllBorrowedBookById(int id){
+        Integer sid= userMapper.getSidUserId(id);
+        if(sid==null)return Collections.emptyList();
+        return mapper.borrowListBySid(sid)
+                .stream()
+                .map(borrow -> mapper.getBookById(borrow.getBid()))
                 .collect(Collectors.toList());
     }
 

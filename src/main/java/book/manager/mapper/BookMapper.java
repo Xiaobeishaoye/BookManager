@@ -11,6 +11,9 @@ public interface  BookMapper {
     @Select("select * from book")
     List<Book> allBook();
 
+    @Select("select * from book where bid=#{bid}")
+    Book getBookById(int bid);
+
     @Delete("delete from book where bid=#{bid}")
     void deleteBook(int bid);
 
@@ -22,4 +25,7 @@ public interface  BookMapper {
 
     @Select("select * from borrow")
     List<Borrow> borrowList();
+
+    @Select("select * from borrow where sid=#{sid}")
+    List<Borrow> borrowListBySid(int sid);
 }
